@@ -1,4 +1,4 @@
-FROM mysql:5.7
+FROM mysql:latest
 LABEL description="My Custom Mysql Docker Image"
 
 COPY mysqld_charset.cnf /etc/mysql/conf.d/mysqld_charset.cnf
