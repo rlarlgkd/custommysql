@@ -1,6 +1,7 @@
 FROM mysql:5.7
 LABEL description="My Custom Mysql Docker Image"
 
+COPY mysqld_charset.cnf /etc/mysql/conf.d/mysqld_charset.cnf
 # Add a database
 ENV MYSQL_DATABASE test1
 
