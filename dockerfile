@@ -1,8 +1,12 @@
 FROM mysql:5.7
 LABEL description="My Custom Mysql Docker Image"
 
-COPY mysqld_charset.cnf /etc/mysql/conf.d/mysqld_charset.cnf
-ENV LC_ALL ko_KR.UTF-8
+# COPY mysqld_charset.cnf /etc/mysql/conf.d/mysqld_charset.cnf
+# ENV LC_ALL ko_KR.UTF-8
+ENV character-set-server utf8
+ENV collation-server utf8_general_ci
+ENV default-character-set utf8
+ENV default-collation utf8_general_ci
 ENV MYSQL_DATABASE test1
 
 COPY ./init-scripts/ /docker-entrypoint-initdb.d/
